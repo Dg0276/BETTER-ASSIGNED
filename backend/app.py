@@ -13,10 +13,10 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 # Ensure backend module can be resolved
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from backend.models import db, Task, ActivityLog
-from backend.schemas import TaskCreate, TaskResponse, ActivityLogResponse
-from backend.services import TaskService
-from backend.middleware import register_request_logger
+from models import db, Task, ActivityLog
+from schemas import TaskCreate, TaskResponse, ActivityLogResponse
+from services import TaskService
+from middleware import register_request_logger
 
 app = Flask(__name__)
 CORS(app)
