@@ -20,6 +20,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState({ id: null, title: "" });
   const [filter, setFilter] = useState("all");
+  const [initialLoad, setInitialLoad] = useState(true);
 
   const loadTasks = async () => {
     setLoading(true);
@@ -30,6 +31,7 @@ function App() {
       console.error(err);
     } finally {
       setLoading(false);
+      setInitialLoad(false);
     }
   };
 
