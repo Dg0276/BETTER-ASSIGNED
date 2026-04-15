@@ -88,8 +88,9 @@ export default function ChatBot({ onTaskCreated }) {
     setParsed(null);
     setSuccess(false);
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
     try {
-      const res = await fetch("http://localhost:5001/parse-task", {
+      const res = await fetch(`${API_URL}/parse-task`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
